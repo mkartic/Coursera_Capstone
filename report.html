@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-11-23 Mon 12:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga2113e1">1. Introduction</a></li>
+<li><a href="#org97d1f4a">2. Data</a>
+<ul>
+<li><a href="#org572dc5d">2.1. Wikipedia</a></li>
+<li><a href="#org9eb5f9a">2.2. Zomato</a></li>
+<li><a href="#org8d2fa89">2.3. Foursquare</a></li>
+</ul>
+</li>
+<li><a href="#org01e797e">3. Methodology</a>
+<ul>
+<li><a href="#org97257bd">3.1. Exploratory Analysis</a></li>
+</ul>
+</li>
+<li><a href="#orgf0fa6f8">4. Results</a></li>
+<li><a href="#orge5bc653">5. Discussion</a></li>
+<li><a href="#org858e1da">6. Conclusion</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga2113e1" class="outline-2">
+<h2 id="orga2113e1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Bangalore is a very vibrant and multicultural city. There's probably a restaurant here representing every cuisine in the world. But getting around the city is a hassle. Traffic is another thing Bangalore is well known for.
+</p>
+
+<p>
+To help promote tourism in the city, this project will utilize data from FourSquare and Zomato to formulate a tour of the city by using just the Metro Rail Services and a bit of walking. This project can be used by Tourism Boards to promote visiting Bangalore, which will have a very real impact on the city's income.
+</p>
+
+<p>
+By aggregating various factors for each Metro station, we can rank them on the basis of:
+</p>
+
+<ol class="org-ol">
+<li>Proximity to tourist places like Temples, Parks, Museums, etc.</li>
+<li>Number of restaurants in the vicinity.</li>
+<li>Diversity &amp; Ratings of restaurants in the area.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org97d1f4a" class="outline-2">
+<h2 id="org97d1f4a"><span class="section-number-2">2</span> Data</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org572dc5d" class="outline-3">
+<h3 id="org572dc5d"><span class="section-number-3">2.1</span> Wikipedia</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+URL: <a href="https://en.wikipedia.org/wiki/List_of_Namma_Metro_stations">https://en.wikipedia.org/wiki/List_of_Namma_Metro_stations</a>
+</p>
+
+<p>
+This page contains a list of all functional metro stations in Bengaluru in a tabular format. The table also contains a link to each metro station's own wiki page.
+</p>
+
+<p>
+URL: <a href="https://www.wikiwand.com/en/Majestic_metro_station">https://www.wikiwand.com/en/Majestic_metro_station</a>
+</p>
+
+<p>
+This is an example URL to one of the metro stations. The station specific pages have an info card which lists the exact location of the station in Lat/Long format. For example, `Majestic Metro Station's` coordinates are `12.975692°N 77.572836°E`. Lat/long obtained this way for each location will be used to query both Zomato &amp; FourSquare to find venues near the metro stations.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9eb5f9a" class="outline-3">
+<h3 id="org9eb5f9a"><span class="section-number-3">2.2</span> Zomato</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Zomato is an Indian company that aggregates restaurant data. They have a data API that can be leveraged to obtain restaurants in an area given coordinates. This data will supplement FourSquare's data very well.
+A detailed description of the API can be found at: <a href="https://developers.zomato.com/documentation#!/restaurant/search">https://developers.zomato.com/documentation#!/restaurant/search</a>
+</p>
+
+<p>
+Sample output from Zomato API for a restaurant
+</p>
+
+<pre class="example">
+{
+"restaurant":{
+  "R":{
+     "res_id":19304399,
+     "is_grocery_store":false,
+     "has_menu_status":{
+	"delivery":-1,
+	"takeaway":-1
+     }
+  },
+  "apikey":"6ae125390c2cc1f1439b61445147ce52",
+  "id":"19304399",
+  "name":"Stoned Monkey",
+  "url":"https://www.zomato.com/bangalore/stoned-monkey-vijay-nagar-bangalore?utm_source=api_basic_user&amp;utm_medium=api&amp;utm_campaign=v2.1",
+  "location":{
+     "address":"22/1, Ground Floor, 3rd Main Road, Attiguppe, Chikkapete, Vijay Nagar, Bangalore",
+     "locality":"Vijay Nagar",
+     "city":"Bangalore",
+     "city_id":4,
+     "latitude":"12.9602338459",
+     "longitude":"77.5323341042",
+     "zipcode":"",
+     "country_id":1,
+     "locality_verbose":"Vijay Nagar, Bangalore"
+  },
+  "switch_to_order_menu":0,
+  "cuisines":"Desserts, Ice Cream, Beverages",
+  "timings":"12noon – 12midnight (Mon-Sun)",
+  "average_cost_for_two":400,
+  "price_range":1,
+  "currency":"Rs.",
+  "highlights":[
+     "Cash",
+     "Delivery",
+     "Credit Card",
+     "Takeaway Available",
+     "Debit Card",
+     "Indoor Seating",
+     "Desserts and Bakes",
+     "Air Conditioned",
+     "Wifi"
+  ],
+  "offers":[         
+  ],
+  "opentable_support":0,
+  "is_zomato_book_res":0,
+  "mezzo_provider":"OTHER",
+  "is_book_form_web_view":0,
+  "book_form_web_view_url":"",
+  "book_again_url":"",
+  "thumb":"https://b.zmtcdn.com/data/pictures/2/17978352/5fc92af63722a09babd80a8d5253bf99.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A",
+  "user_rating":{
+     "aggregate_rating":"3.6",
+     "rating_text":"Good",
+     "rating_color":"9ACD32",
+     "rating_obj":{
+	"title":{
+	   "text":"3.6"
+	},
+	"bg_color":{
+	   "type":"lime",
+	   "tint":"600"
+	}
+     },
+     "votes":140
+  },
+  "all_reviews_count":1,
+  "photos_url":"https://www.zomato.com/bangalore/stoned-monkey-vijay-nagar-bangalore/photos?utm_source=api_basic_user&amp;utm_medium=api&amp;utm_campaign=v2.1#tabtop",
+  "photo_count":160,
+  "menu_url":"https://www.zomato.com/bangalore/stoned-monkey-vijay-nagar-bangalore/menu?utm_source=api_basic_user&amp;utm_medium=api&amp;utm_campaign=v2.1&amp;openSwipeBox=menu&amp;showMinimal=1#tabtop",
+  "featured_image":"https://b.zmtcdn.com/data/pictures/2/17978352/5fc92af63722a09babd80a8d5253bf99.jpg?output-format=webp",
+  "has_online_delivery":1,
+  "is_delivering_now":0,
+  "store_type":"",
+  "include_bogo_offers":true,
+  "deeplink":"zomato://restaurant/19304399",
+  "is_table_reservation_supported":0,
+  "has_table_booking":0,
+  "events_url":"https://www.zomato.com/bangalore/stoned-monkey-vijay-nagar-bangalore/events#tabtop?utm_source=api_basic_user&amp;utm_medium=api&amp;utm_campaign=v2.1",
+  "phone_numbers":"+91 9731780914",
+  "all_reviews":{
+     "reviews":[
+	{
+	   "review":[]
+	}
+     ]
+  },
+  "establishment":[
+     "Dessert Parlour"
+  ],
+  "establishment_types":[]
+}
+}
+</pre>
+
+<p>
+From Zomato, we can obtain a restaurant's
+</p>
+<ol class="org-ol">
+<li>Exact address and lat/long for precise mapping</li>
+<li>Cuisine type,</li>
+<li>Ratings,</li>
+<li>Popularity, etc.</li>
+</ol>
+
+<p>
+We will be using the cuisine type (one-hot encoding) and ratings as features. This data will be aggregated for all restaurants around a Metro Station.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d2fa89" class="outline-3">
+<h3 id="org8d2fa89"><span class="section-number-3">2.3</span> Foursquare</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+We can also use FourSquare to find out if there are any interesting places to visit that are walkable from a Metro station.
+Using foursquare, we obtain interesting places to visit such as
+</p>
+<ol class="org-ol">
+<li>Museum,</li>
+<li>Expos,</li>
+<li>Theatres,</li>
+<li>Shopping centres,</li>
+<li>Parks, etc.</li>
+</ol>
+
+<p>
+Sample output from FourSquare API for a venue
+</p>
+
+<pre class="example">
+{
+   "reasons":{
+      "count":0,
+      "items":[
+	 {
+	    "summary":"This spot is popular",
+	    "type":"general",
+	    "reasonName":"globalInteractionReason"
+	 }
+      ]
+   },
+   "venue":{
+      "id":"52be91c8498e64525d5b46f0",
+      "name":"KFC",
+      "location":{
+	 "address":"No 96, next to HP petrol pump",
+	 "crossStreet":"Chandra layout",
+	 "lat":12.960916180639444,
+	 "lng":77.5281295778429,
+	 "labeledLatLngs":[
+	    {
+	       "label":"display",
+	       "lat":12.960916180639444,
+	       "lng":77.5281295778429
+	    }
+	 ],
+	 "distance":602,
+	 "postalCode":"560040",
+	 "cc":"IN",
+	 "city":"Bangalore",
+	 "state":"Karnātaka",
+	 "country":"India",
+	 "formattedAddress":[
+	    "No 96, next to HP petrol pump (Chandra layout)",
+	    "Bangalore 560040",
+	    "Karnātaka",
+	    "India"
+	 ]
+      },
+      "categories":[
+	 {
+	    "id":"4d4ae6fc7a7b7dea34424761",
+	    "name":"Fried Chicken Joint",
+	    "pluralName":"Fried Chicken Joints",
+	    "shortName":"Fried Chicken",
+	    "icon":{
+	       "prefix":"https://ss3.4sqi.net/img/categories_v2/food/friedchicken_",
+	       "suffix":".png"
+	    },
+	    "primary":true
+	 }
+      ],
+      "photos":{
+	 "count":0,
+	 "groups":[]
+      }
+   },
+   "referralId":"e-0-52be91c8498e64525d5b46f0-1"
+}
+&lt;/code&gt;
+</pre>
+
+<p>
+As we can see above, we can get the following details about a venue from FourSquare:
+</p>
+<ol class="org-ol">
+<li>Exact latitude/longitude for marking on maps.</li>
+<li>Category of the location.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org01e797e" class="outline-2">
+<h2 id="org01e797e"><span class="section-number-2">3</span> Methodology</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org97257bd" class="outline-3">
+<h3 id="org97257bd"><span class="section-number-3">3.1</span> Exploratory Analysis</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+For each metro station, we find the average ratings and cost for two. 
+</p>
+
+<p>
+As expected, the cost and ratings of terminal stations are pretty low. 
+</p>
+
+<p>
+Some interesting observations from the data:
+</p>
+<ol class="org-ol">
+<li>Most popular cuisines: 
+<ol class="org-ol">
+<li>North Indian</li>
+<li>Chinese</li>
+<li>South Indian</li>
+<li>Fast food</li>
+<li>Beverages</li>
+</ol></li>
+<li>Most diverse locations in terms of cuisines available:
+As most residents of the city know, these are all pretty upscale locations.
+<ol class="org-ol">
+<li>Trinity (27)</li>
+<li>Cubbon park (26)</li>
+<li>Sandal Soap Factory (26)</li>
+<li>Sampige road (26)</li>
+<li>MG Road (26)</li>
+</ol></li>
+<li>Costliest locations:
+Both these locations cost most than 1000 INR for a meal for two.
+<ol class="org-ol">
+<li>Trinity</li>
+<li>Sandal Soap Factory</li>
+</ol></li>
+<li>Cheapest locations:
+<ol class="org-ol">
+<li>Halasuru</li>
+<li>National College</li>
+</ol></li>
+</ol>
+
+<div id="orge67e3b7" class="figure">
+<p><img src="./cost_map.png" alt="cost_map.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>(Screenshot) Map of Bengaluru Metro stations color coded for their average cost for a meal for two. (Greener the better. )</p>
+</div>
+
+
+<div id="org2013846" class="figure">
+<p><img src="./cost_v_rating.png" alt="cost_v_rating.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>This graph shows a plot of costs against ratings.</p>
+</div>
+
+
+<div id="orgbabb2ce" class="figure">
+<p><img src="./ratings_map.png" alt="ratings_map.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>(Screenshot) Map of Bengaluru Metro stations color coded for their average ratings. (Greener the better. )</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf0fa6f8" class="outline-2">
+<h2 id="orgf0fa6f8"><span class="section-number-2">4</span> Results</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+We run kmeans clustering on the aggregated data. Number of clusters was fixed at 5 as splitting 39 rows into too many clusters might lead to overfitting.
+</p>
+
+<div id="org299649d" class="figure">
+<p><img src="./clusters_map.png" alt="clusters_map.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>(Screenshot) Map of Bengaluru Metro stations clustered.</p>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">name</th>
+<th scope="col" class="org-right">Cluster labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Attiguppe</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Baiyappanahalli</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Banashankari</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Bangalore City Railway Station</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Chickpete</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">Cubbon Park</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Dasarahalli</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Deepanjali Nagar</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Halasuru</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Hosahalli</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Indiranagar</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Jalahalli</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Jayanagar</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Jayaprakash Nagar</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Krishna Rajendra Market</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">Lalbagh</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Magadi Road</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Mahalakshmi</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Majestic</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Mahatma Gandhi Road</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Mysore Road</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Nagasandra</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">National College</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Peenya</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">Peenya Industry</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Rajajinagar</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Rashtrakavi Kuvempu Road</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Rashtreeya Vidyalaya Road</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Sampige Road</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Sandal Soap Factory</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">Sir M. Visveshwarya</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Swami Vivekananda Road</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">South End Circle</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Srirampura</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Trinity</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-left">Dr. B. R. Ambedkar Station, Vidhana Soudha</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">Vijayanagar</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Yeshwantpur</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">Goraguntepalya</td>
+<td class="org-right">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+<div id="outline-container-orge5bc653" class="outline-2">
+<h2 id="orge5bc653"><span class="section-number-2">5</span> Discussion</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Some salient points from this analysis.
+</p>
+<ol class="org-ol">
+<li>There seems to be no direct correlation between cost and ratings.</li>
+<li>FourSquare data was extremely lacking for Indian cities. A lot of entries were at least years old and not updated.</li>
+</ol>
+
+<p>
+In a future iteration of this project, we can probably integrate Google ratings too to get an even higher fidelity for our data set.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org858e1da" class="outline-2">
+<h2 id="org858e1da"><span class="section-number-2">6</span> Conclusion</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+From this analysis of restaurant data, we are able to harness the crowd-sourced data collected by Zomato on Bengaluru. Based on the average cost and ratings of various metro stations, we can definitely go around Bengaluru on just Metro and still experience the food culture of the city in all its glory. 
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2020-11-23 Mon 12:05</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
